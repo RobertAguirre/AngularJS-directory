@@ -1,1 +1,1 @@
-# AngularJS-practice
+# AngularJS-directory
