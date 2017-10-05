@@ -8,7 +8,7 @@ artistControllers.controller('ListController', ['$scope', '$http', function($sco
   });
 }]);
 
-artistControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+artistControllers.controller('DetailsController', ['$scope', '$http','$routeParams', function($scope, $http, $routeParams) {
   $http.get('js/data.json').then(function(response) {
     var data = response.data;
     $scope.artists = data;

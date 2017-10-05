@@ -3,17 +3,18 @@ var myApp = angular.module('myApp', [
   'artistControllers'
 ]);
 
-myApp.config(['$routeProvider', function($routeProvider) {
+myApp.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.html5Mode(true);
   $routeProvider.
-  when('/list', {
-    templateUrl: 'partials/list.html',
-    controller: 'ListController'
-  }).
-  when('/details/:itemId', {
-    templateUrl: 'partials/details.html',
-    controller: 'DetailsController'
-  }).
-  otherwise({
-    redirectTo: '/list'
-  });
+    when('/', {
+      templateUrl: 'partials/list.html',
+      controller: 'ListController'
+    }).
+    when('/details/:itemId', {
+      templateUrl: 'partials/details.html',
+      controller: 'DetailsController'
+    }).
+    otherwise({
+      redirectTo: '/'
+    });
 }]);
